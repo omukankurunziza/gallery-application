@@ -27,5 +27,10 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+     @classmethod
+    def search_by_category(cls,search_term):
+        gallery = cls.objects.filter(category__icontains=search_term)
+        return gallery
+
 
 
