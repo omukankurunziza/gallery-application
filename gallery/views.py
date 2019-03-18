@@ -7,7 +7,7 @@ from .models import Image,Category,Location
 def gallery(request):
     all_pictures = Image.all_pictures()
     print(all_pictures)
-    return render(request, 'gallery.html',{"photos":all_pictures})
+    return render(request, 'gallery.html',{"all_pictures":all_pictures})
 
 
 def search_results(request):
@@ -32,3 +32,6 @@ def display_images_locations(request):
 
     return render(request, 'location.html', {"pictures":pictures}) 
 
+def single_picture(request):
+    image = Image.get_picture(image_id)
+    return render(request, 'single_picture.html', {"image":image})
