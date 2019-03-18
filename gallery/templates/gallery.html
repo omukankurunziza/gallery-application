@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 {{block.super}}
-<div class="container">
-  <h1 style="color: teal;" class="text-center">Photo Gallery</h1>
+<div class="container" style="background:teal;font-size: 20px">
+  <div class="jumbotron" style="background:violet">
+  <h1 style="color:burlywood;font-size: 30px" class="text-center">Photo Gallery</h1>
+  </div>
   <div class="row">
     {% for picture in all_pictures %}
     <div class="col-md-4">

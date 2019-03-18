@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-from django.http  import HttpResponse,Http404
 from .models import Image,Category,Location
 # Create your views here.
     
@@ -32,6 +31,3 @@ def display_images_locations(request):
 
     return render(request, 'location.html', {"pictures":pictures}) 
 
-def single_picture(request):
-    image = Image.get_picture(image_id)
-    return render(request, 'single_picture.html', {"image":image})

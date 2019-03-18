@@ -1,18 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
+<div class="container" style="background: wheat;font-size: 18px">
 <div class="row">
     {% for image in images %} {% if images %}
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns">
         <div class="scale">
-            <div class="opacity">
-                <div class="view">
-                    <a href="" class="btn-view">View Image</a>
-                </div>
-            </div>
+            
+                <strong> {{image.name}}</strong>  
+            
             <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;"src="{{image.image.url}}" alt="Image" class="img-fluid">
+            Description: {{image.description}}
+              <br>
+            Location: {{image.location}}
+            <br>
+            Category: {{image.category}}
         </div>
     </div>
     {% endif %} {% endfor %}
 </div>
+
 </div>
 {% endblock %}
