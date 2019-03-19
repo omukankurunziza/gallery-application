@@ -4,11 +4,11 @@ from .models import Image,Category,Location
 class ImageTestClass(TestCase):
 
     def setUp(self):
-        self.food = Image(name = 'food', description = 'food character')
-        self.food.save_image()
+        self.brouchette = Image(name = 'brouchette', description = 'it Rwandan food called brouchette')
+        self.brouchette.save_image()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.food, Image))
+        self.assertTrue(isinstance(self.brouchette, Image))
 
 
     def test_save_method(self):
@@ -18,7 +18,7 @@ class ImageTestClass(TestCase):
 
 
     def test_delete_method(self):
-        self.new_image = Image(name = 'food', description = 'the beauty of a foods despite its thorns')  
+        self.new_image = Image(name = 'brouchette', description = 'it Rwandan food called brouchette')  
         self.new_image.save_image() 
         self.new_image.delete_image()
         images = Image.objects.all()
@@ -51,19 +51,19 @@ class CategoryTestClass(TestCase):
         self.assertTrue(len(categories) > 0)        
 
     def test_delete_method(self):
-        self.new_category = Category(name = 'Food')
+        self.new_category = Category(name = 'Foood')
         self.new_category.save_category()
         self.new_category.delete_category()
         categories = Category.objects.all()
         self.assertEqual(len(categories), 0)   
 
     def test_update_category(self):
-        self.health = Category(name = 'Food')
+        self.health = Category(name = 'Foood')
         self.health.save_category()
         self.health = Category(name = 'Fashion')
         self.health.save_category()
         self.health.update_category(name = 'Travel')
-        categories = Category.objects.filter(name = 'house')
+        categories = Category.objects.filter(name = 'kigali')
         self.assertEqual(len(categories), 1)
 
 
@@ -82,17 +82,17 @@ class LocationTestClass(TestCase):
         self.assertTrue(len(locations) > 0)
 
     def test_delete_method(self):
-        self.new_location = Location(name = 'Beijing')
+        self.new_location = Location(name = 'china')
         self.new_location.save_location()
         self.new_location.delete_location()
         locations = Location.objects.all()
         self.assertEqual(len(locations), 0)
 
     def test_update_method(self):
-        self.Newyork = Location(name = 'Newyork')
-        self.Newyork.save_location()
-        self.Newyork = Location(name = 'Newyork')
-        self.Newyork.save_location()
-        selfNewyorki.update_location(name = 'Newyork')
-        locations = Location.objects.filter(name = 'Newyork')
+        self.Kigali = Location(name = 'Kigali')
+        self.Kigali.save_location()
+        self.Kigali = Location(name = 'Kigali')
+        self.Kigali.save_location()
+        selfKigali.update_location(name = 'Kigali')
+        locations = Location.objects.filter(name = 'Kigali')
         self.assertEqual(len(locations), 1)   
