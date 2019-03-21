@@ -50,7 +50,7 @@ You need the following to work on the project:
 
 -A text Editor
 
-## Link to Live Website: 
+## Link to Live Website: https://rukundogallery.herokuapp.com/
 
 ## Technologies Used
 Django
